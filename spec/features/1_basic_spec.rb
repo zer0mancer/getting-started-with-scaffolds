@@ -46,7 +46,7 @@ describe "The /movies/new page" do
     click_button "Create movie"
 
     expect(page).to have_content("Movie created successfully."),
-      "Expected to fill in the new movie form, click 'Create Movie', and be redirected to the movie index with a success notice"
+      "Expected to fill in the new movie form, click 'Create movie', and be redirected to the movie index with a success notice"
   end
 end
 
