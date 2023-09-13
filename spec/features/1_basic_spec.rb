@@ -43,7 +43,7 @@ describe "The /movies/new page" do
 
     fill_in "Title", with: "My test movie"
     fill_in "Description", with: "description"
-    click_button "Create Movie"
+    click_button "Create movie"
 
     expect(page).to have_content("Movie created successfully."),
       "Expected to fill in the new movie form, click 'Create Movie', and be redirected to the movie index with a success notice"
@@ -63,8 +63,8 @@ describe "The movie details page" do
   it "has a link to delete the movie with a DELETE request", points: 2 do
     visit "/movies/#{movie.id}"
 
-    expect(page).to have_selector("a[href='/movies/#{movie.id}'][data-method='delete']", text: 'Delete Movie'),
-      "Expected /movies/ID to have 'Delete Movie' link with the proper data-method='delete'."
+    expect(page).to have_selector("a[href='/movies/#{movie.id}'][data-turbo-method='delete']", text: 'Delete movie'),
+      "Expected /movies/ID to have 'Delete movie' link with the proper data-turbo-method='delete'."
   end
 end
 
