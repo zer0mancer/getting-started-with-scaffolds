@@ -28,7 +28,6 @@ module RailsTemplate
     end
 
     config.action_controller.default_protect_from_forgery = true
-    config.action_controller.forgery_protection_origin_check = false
     config.generators.system_tests = nil
   end
 end
