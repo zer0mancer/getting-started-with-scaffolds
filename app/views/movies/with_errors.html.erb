@@ -1,0 +1,39 @@
+    <h2>
+      Add a new movie
+    </h2>
+
+<% @the_movie.error.full_messages.each do |error|%>
+<li>
+<%= error %>
+
+</li>
+
+<%end%>
+    <form action="/movies" method="post" data-turbo="false">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <div>
+        <label for="title_box">
+          Title
+        </label>
+
+        <input type="text" id="title_box" name="query_title" value="<%=@the_movie.title%>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <textarea id="description_box" name="query_description" rows="3" value="<%=@the_movie.description%>"></textarea>
+      </div>
+
+      <div>
+        <input type="checkbox" id="released_box" name="query_released" value="1">
+
+        <label for="released_box">Released</label>
+      </div>
+
+      <button>
+        Create movie
+      </button>
+    </form>
